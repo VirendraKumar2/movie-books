@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    --main-color: #65eefe;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: #242333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'open sans', sans-serif;
+}
+
+main {
+    text-align: center;
+    perspective: 200px;
+}
+
+main > span:first-child {
+    font-size: 18px;
+}
+
+select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #eee;
+    appearance: none;
+    font-size: 18px;
+}
+
+.labels {
+    display: flex;
+    background-color: #000;
+    justify-content: space-around;
+    line-height: 2;
+    width: fit-content;
+    margin: 30px auto;
+    gap: 20px;
+    padding: 0 20px;
+    border-radius: 5px;
+}
+
+.labels span {
+    position: relative;
+    margin-left: 25px;
+    font-size: 14px;
+    color: #454452;
+}
+
+.labels span::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #65eefe;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -25px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.labels span:first-child::before {
+    background-color: #454452;
+}
+
+.labels span:last-child::before {
+    background-color: #fff;
+}
+
+.screen {
+    width: 250px;
+    height: 75px;
+    background-color: #fff;
+    margin: 0 auto 20px;
+    box-shadow: 0 -5px 5px 0 #777,
+                2px 2px 5px 0 #fff,
+                -2px 0 5px 0 #fff;
+    transform: rotateX(-10deg);
+}
+
+.seats {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 30px auto 40px;
+    width: 195px;
+}
+
+.range {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    flex-wrap: wrap;
+    width: 35px;
+}
+
+.range:nth-child(2) {
+    width: 75px;
+}
+
+.seat {
+    width: 15px;
+    height: 15px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: #454545;
+    transition: transform 0.3s;
+}
+
+.selected {
+    background-color: #65eefe;
+}
+
+.occupied {
+    background-color: #fff;
+}
+
+.seat:not(.occupied):hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+p span {
+    color: #65eefe;
+}
